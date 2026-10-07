@@ -6,7 +6,7 @@ fn main() {
     scores.insert(String::from("Blue"), 10);
     scores.insert(String::from("Yellow"), 50);
 
-    let score = scores.get(String::from("Blue")).copied().unwrap_or(0);
+    let score = scores.get(&String::from("Blue")).copied().unwrap_or(0);
     println!("The score for Blue is {score}");
 
     for (key, value) in &scores {
@@ -26,7 +26,7 @@ fn main() {
     scores.entry(String::from("Yellow")).or_insert(50);
     scores.entry(String::from("Blue")).or_insert(50);
 
-    println!("{scores:?}")
+    println!("{scores:?}");
 
     let text = "hello world wonderful world";
 
